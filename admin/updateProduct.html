@@ -1,0 +1,30 @@
+<form method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tên sản phẩm</label>
+        <input type="text" value="product.name" class="form-control" ng-model="product.name" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Giá</label>
+        <input type="number" value="product.price" class="form-control" ng-model="product.price" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Số lượng</label>
+        <input type="number" value="product.quantity" class="form-control" ng-model="product.quantity" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Ảnh</label>
+        <input type="file" file-model="product.imageUrl" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div><img src="{{product.imgUrl}}" alt="" width="100">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Mô tả</label>
+        <input type="text" value="product.descript" class="form-control" ng-model="product.descript" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Loại sản phẩm</label>
+        <br>
+        <select class="form-select" ng-model="product.categoryId" aria-label="Default select example">
+            <option ng-repeat="category in categories" selected value="{{category.id}}">{{category.name}}</option>
+          </select>
+    </div>
+    <button type="submit" ng-click="editProduct(product.id)" class="btn btn-primary">Thay đổi</button>
+</form>

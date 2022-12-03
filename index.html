@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+
+
+<body ng-controller="HomeController">
+    <div class="container">
+        <!-- menu -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <img src="img/logo.jpg" width="50" class="navbar-brand" alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#!home">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#!product">Danh sách sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#!contact">Liên hệ</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Tìm</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- slide -->
+        <div id="carouselExampleFade" class="carousel slide carousel-fade h-50" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/690-300-max.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/ipad-gen9-sliding-t11.png" class="d-block w-100 " alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/oppo-a77s-sliding-t11.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <br>
+        <ng-view></ng-view>
+    </div>
+    <footer>
+        <div class="card">
+            <div class="card-header">
+                Liên hệ:
+            </div>
+            <div class="card-body d-flex">
+                <img src="img/logo.jpg" class="card-img-top mx-5" style="width: 8rem; border-radius: 10px;">
+                <blockquote class="blockquote mb-0 mr-5 mx-5">
+                    <p class="">
+                        Số điện thoại: 098696996
+                        <br> Email:thanhtvph18853@gmail.com
+                        <br>facebook:fb.com/thanhtvph18853
+                        <br> Địa chỉ: Nam từ liêm -HN
+                    </p>
+                </blockquote>
+                <blockquote class="blockquote mb-0 mx-5">
+                    <p>Copyright :© Cellphone Shop <br>Cảm ơn mọi người <br> 感谢大家来关心<br> ありがとうございました。</p>
+                </blockquote>
+
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script>
+        angular.module('myApp', ['ngRoute'])
+            .config(function($routeProvider) {
+                $routeProvider
+                    .when("/", {
+                        templateUrl: "./home.html"
+                    }).when("/home", {
+                        templateUrl: "./home.html"
+                    }).when("/admin", {
+                        templateUrl: "./admin/index.html"
+                    }).when("/contact", {
+                        templateUrl: "./contact.html"
+                    })
+            }).controller('HomeController', function($scope, $http) {
+                $http.get('http://localhost:3000/products?_expand=category').then(function(res) {
+                    $scope.products = res.data;
+                    // $scope.page = $scope.products.length / 4;
+                    // var range = [];
+                    // for (var i = 0; i < $scope.page; i++) {
+                    //     range.push(i);
+                    // }
+                    // $scope.range = range;
+                });
+                $http.get('http://localhost:3000/categories').then(function(res) {
+                    $scope.categories = res.data;
+                });
+
+                function check() {
+                    var flag = true;
+                    flag &= validateEPT('name', 'name-mess') & validateEPT('email', 'email-mess') & validateEPT('phone', 'phone-mess') & validateEPT('content', 'content-mess');
+                    if (flag == 0) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+
+                function validateEPT(el, er) {
+                    var inputText = document.getElementById(el);
+                    if (inputText.value.trim() === '') {
+                        document.getElementById(er).innerHTML = inputText.name + '  không được bỏ trống '
+                        document.getElementById(er).style.display = 'block';
+                        return false
+                    } else {
+                        document.getElementById(er).innerHTML = ''
+                        document.getElementById(er).style.display = 'none';
+                        return true;
+                    }
+                }
+                $scope.contact = {};
+                $scope.addContact = function() {
+                    if (check()) {
+                        $http.post('http://localhost:3000/contacts', $scope.contact).then(function(res) {
+                            $scope.contacts = res.data;
+                            alert("Gửi thành công");
+                        });
+                    }
+                }
+            })
+    </script>
+
+</body>
+
+</html>

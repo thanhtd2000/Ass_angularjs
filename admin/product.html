@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên</th>
+            <th scope="col">Giá</th>
+            <th scope="col">Ảnh</th>
+            <th scope="col">Số lượng</th>
+            <th scope="col">Mô tả</th>
+            <th scope="col">Chuyên mục ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in products">
+            <th scope="row">{{product.id+1}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td><img src="{{product.imgUrl}}" alt="" width="60"></td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.descript}}</td>
+            <td>{{product.category.name}}</td>
+            <td><button type="button" class="btn btn-primary" ng-click="updateProduct(product.id)">Sửa</button> <button type="button" class="btn btn-danger" ng-click="deleteProduct(product.id)">Xoá</button></td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary"><a href="#!/add">Thêm mới</a></button>
+<br>
+<br>
+<!-- page -->
+<div class="text-center">
+    <nav aria-label="Page navigation example ">
+        <ul class="pagination text-center">
+            <li class="page-item" ng-repeat="pages in range"><a class="page-link" ng-click="pageSc(pages+1)" href="#!product">{{pages+1}}</a></li>
+        </ul>
+    </nav>
+</div>

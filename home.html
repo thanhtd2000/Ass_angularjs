@@ -1,0 +1,15 @@
+<div ng-repeat="category in categories">
+    <h2><a href="" class="text-danger">{{category.name}}</a></h2>
+    <div class="row my-5">
+        <div class="col-sm-4" ng-repeat="product in products" ng-if="product.categoryId == category.id">
+            <div class="card mx-5 mb-4" style="width: 20rem;"><img src="{{product.imgUrl}}" class="card-img-top" alt="..." height="250">
+                <div class="card-body">
+                    <h4 class="card-title">{{product.name}}</h4>
+                    <p class="card-text">{{product.descript}}</p>
+                    <h5 class="card-text text-danger">{{product.price}}</h5>
+                    <a href="#" class="btn btn-danger">Đặt hàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

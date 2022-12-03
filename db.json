@@ -1,0 +1,136 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "name": "điện thoại",
+      "price": 12023,
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669993288/jvqwbpc0j0lyq1xlbix1.jpg",
+      "quantity": 12,
+      "descript": "OK2",
+      "categoryId": "0"
+    },
+    {
+      "id": 1,
+      "name": "Máy tính 2",
+      "price": 1202,
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669993288/jvqwbpc0j0lyq1xlbix1.jpg",
+      "quantity": 123,
+      "descript": "sđá",
+      "categoryId": "1"
+    },
+    {
+      "name": "thanhhand",
+      "price": 23323,
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669995687/dha0xgnjgn6lscltbcov.jpg",
+      "quantity": 23232,
+      "descript": "2323",
+      "categoryId": "2",
+      "id": 2,
+      "imageUrl": {}
+    },
+    {
+      "name": "thanhhand sadsa",
+      "price": 23323,
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669995871/yzvywrcfkfwjejt8yxgn.jpg",
+      "quantity": 2323223,
+      "descript": "2323",
+      "categoryId": "1",
+      "id": 3,
+      "imageUrl": {}
+    },
+    {
+      "name": "thanhhand",
+      "price": 23323,
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669995934/z6et6wilrmsisg7uvet7.jpg",
+      "quantity": 23232,
+      "descript": "2323",
+      "categoryId": "0",
+      "id": 4,
+      "imageUrl": {}
+    },
+    {
+      "name": "thanhhand",
+      "price": 23323,
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669993288/jvqwbpc0j0lyq1xlbix1.jpg",
+      "quantity": 23232,
+      "descript": "2323",
+      "categoryId": "0",
+      "id": 5
+    },
+    {
+      "name": "thanhhand",
+      "price": 23323,
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669993288/jvqwbpc0j0lyq1xlbix1.jpg",
+      "quantity": 23232,
+      "descript": "2323",
+      "categoryId": "0",
+      "id": 6
+    },
+    {
+      "name": "sadsa",
+      "price": 2323,
+      "quantity": 23,
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669993288/jvqwbpc0j0lyq1xlbix1.jpg",
+      "descript": "2323",
+      "categoryId": "0",
+      "id": 7
+    },
+    {
+      "name": "sadsad",
+      "price": 3232,
+      "quantity": 2332,
+      "imageUrl": {},
+      "descript": "sadsad",
+      "categoryId": "2",
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669993582/kqhuvmecd719w2swnxb0.jpg",
+      "id": 8
+    },
+    {
+      "name": "dsads",
+      "price": 2323,
+      "quantity": 223,
+      "imageUrl": {},
+      "descript": "ádsa",
+      "categoryId": "1",
+      "imgUrl": "http://res.cloudinary.com/ecommercer2021/image/upload/v1669994518/wiz107xdezzryauuc02e.jpg",
+      "id": 9
+    }
+  ],
+  "contacts": [
+    {
+      "id": 0,
+      "name": "Thông tin",
+      "email": "ThôngTin@gmail.com",
+      "phone": 2151518,
+      "content": "Muốn liên hệ với bạn"
+    },
+    {
+      "id": 1,
+      "name": "Thông tin",
+      "email": "ThôngTin@gmail.com",
+      "phone": 2151518,
+      "content": "Muốn liên hệ với bạn"
+    },
+    {
+      "email": "sadsad@gmail.com",
+      "phone": 867422648,
+      "name": "trần văn thành",
+      "content": "đasad",
+      "id": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": 0,
+      "name": "Điện thoại"
+    },
+    {
+      "id": 1,
+      "name": "Máy tính"
+    },
+    {
+      "name": "Linh tinh",
+      "id": 2
+    }
+  ]
+}
